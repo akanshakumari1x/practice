@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Custom css -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Bootstrap js -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+		
+	<form action="" method="post" enctype="multipart/form-data">
+	<div class="container mt-5 border border-success rounded">
+      	<div class="justitfy-content-center mt-4">
+      		<h4 class="text-center mb-4">User Registration</h4>
+      		<form>
+  			<div class="form-row">
+			  	<!-- Name -->
+			  	<div class="form-group col-md-6">
+			      <input type="text" class="form-control" required id="inputName" placeholder="Name" name="inputName">
+			    </div>
+
+			    <!-- Mobile -->
+			    <div class="form-group col-md-6">
+			      <input type="text" class="form-control" required id="inputMobile" pattern="[1-9]{1}[0-9]{9}" placeholder="Mobile" name="inputMobile">
+			    </div>
+
+			    <!-- State -->
+			    <div class="form-group col-md-6">
+			      <input type="text" class="form-control" required id="inputState" placeholder="State" name="inputState">
+			    </div>
+
+			    <!-- City -->
+			    <div class="form-group col-md-6">
+			      <input type="text" class="form-control" required id="inputCity" placeholder="City" name="inputCity">
+			    </div>
+
+			    <!-- Password -->
+			    <div class="form-group col-md-6">
+			      <input type="password" class="form-control" required id="inputPassword1" placeholder="Password" name="inputPassword1">
+			    </div>
+
+			    <!-- Confirm Password -->
+			    <div class="form-group col-md-6">
+			      <input type="password" class="form-control" required id="inputPassword2" placeholder="Confirm Password" name="inputPassword2">
+			    </div>
+
+			    <!-- Date of Birth -->
+			    <div class="form-group col-md-4">
+			      <input type="date" class="form-control" required id="inputDOB" placeholder="Date of Birth" name="inputDOB">
+			    </div>
+
+			    <!-- Address -->
+			    <div class="form-group col-md-8">
+			      <input type="text" class="form-control" required id="inputAddress" placeholder="Address" name="inputAddress">
+			    </div>
+
+			    <!-- Voter/Group -->
+			    <div class="form-group col-md-4">
+			      <select id="inputRole" class="form-control" required name="inputRole">
+			        <option selected>Male</option>
+			        <option>Female</option>
+			      </select>
+			    </div>
+
+			    <!-- Profile Photo -->
+			    <div class="form-group col-md-8">
+			    	<div class="custom-file">
+			  			<input type="file" class="custom-file-input" id="fileToUpload" name="fileToUpload" required >
+			  			<label class="custom-file-label" for="customFile">Choose file</label>
+					</div>
+			    </div>
+
+			    <div class="col-md-4 aggrement">
+			    	<input type="checkbox" id="aggrement" name="aggrement" value="aggrement">
+  					<label for="aggrement">I Agree to the terms and conditions</label><br>
+			    </div>
+			    <div class="col-md-4">
+  					<input type="radio" name="rules" id="rules" value="rules">
+  					<label for="rules">Subscribe to newsletter</label><br>
+  					
+			    </div>
+			    <div class="col-md-4">
+			    	<input type="radio" name="rules" id="rules" value="rules">
+  					<label for="rules">Do not subscribe to newsletter</label><br>
+			    </div>
+			</div>
+			  
+		  	<div class="col text-center mt-2">
+		  		<button type="submit" class="btn btn-success mb-3 btn-lg col-md-4">Register</button>
+		    </div>
+
+		    <div class="form-group mb-2 text-center">
+							Already have an account?
+							<a style="color: red" href="#">Log In</a>
+			</div>
+		</div> 
+	</div>
+	</form>
+
+	<script>
+	// Display File Name
+	$(".custom-file-input").on("change", function() {
+	  var fileName = $(this).val().split("\\").pop();
+	  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+	});
+	</script>
+
+</body>
+</html>
